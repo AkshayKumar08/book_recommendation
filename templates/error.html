@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Error</title>
+</head>
+<body>
+	<a href="/">Go Back</a>
+	{% if msg == Null or len(msg) == 0 %}
+		<h1>Unexpected Error Occured</h1>
+	{% else %}
+		<h1>{{msg}}</h1>
+	{% endif %}
+</body>
+</html>

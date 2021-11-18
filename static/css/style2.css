@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    text-align: center;
+    color: #fff;
+    background: rgb(20, 20, 20);
+    padding: 20px;
+}
+
+.container{
+	display: grid;
+	max-width: 1080px;
+	margin: 0 auto auto;
+}
+
+#index-page{
+	max-height: 720px;
+	grid-template-rows: 1fr 1fr;
+}
+
+.header{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 4em;
+	color: rgb(255, 50, 50);
+}
+
+#book-form{
+	padding: 30px;
+}
+
+form label{
+	display: block;
+	font-size: 2em;
+	color: rgb(50, 255, 50);
+}
+
+input[type="text"]{
+	position: relative;
+	max-width: 400px;
+	width: 100%;
+	height: 50px;
+	padding-left: 25px;
+	margin: 30px 0 30px 0;
+	border: none;
+	outline: none;
+	border-radius: 25px 0 0 25px;
+	font-size:  16px;
+}
+
+input[type="submit"]{
+	position: relative;
+	left: -5px;
+	width: 100px;
+	height: 50px;
+	border-radius: 0 25px 25px 0;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background: rgb(50, 50, 250);
+	color: rgb(255, 255, 255);
+}
+
+.btn:hover{
+	background-color: rgb(90, 90, 250);
+}
+
+.content {
+	/*display: grid;*/
+	/*grid-template-columns: repeat(12, 1fr);*/
+	/*grid-auto-rows: minmax(100px, auto);*/
+	max-width: 1080px;
+	margin: 0px;
+	background-color: rgb(50, 50, 50);
+	padding: 25px;
+	border-radius: 20px;
+}
+
+#boo-detailsk{
+	width: 100%;
+}
+
+#book-img {
+	/*grid-column: 1 / 5;
+	grid-row: 1 / 4;
+	margin: auto auto;*/
+}
+
+#book-title{
+	grid-row: 1 / 2;
+	grid-column: 1 / 13;
+}
+
+#book-details {
+	grid-row: 2 / 3;
+	grid-column: 1 / 13;
+}
+
+table{
+	text-align: left;
+}
+
+td{
+	padding-right: 10px;
+}
+
+.main{
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-auto-rows: minmax(100px, auto);
+	max-width: 1080px;
+	margin: 0px;
+	background-color: rgb(50, 50, 50);
+	padding: 25px;
+	border-radius: 15px;
+}
+
+.card{
+	display: grid;
+	margin: 5px;
+	background-color: rgb(65, 65, 65);
+	border-radius: 35px;
+}
+
+.card:hover{
+	background-color: rgb(70, 70, 70);
+}
+/*
+.card-title {
+	background-color: rgb(75, 75, 75);
+	min-height: 50px;
+	color: rgb(0, 0, 0);
+	border-radius: 20px;
+}*/
+
+.search-bar .header{
+	color: rgb(125, 125, 125);
+}
+
+.search-bar .book-label{
+	color: rgb(200, 200, 200);
+}
+
+.search-bar .btn{
+	background: rgb(100, 100, 100);
+}
+
+.search-bar .btn:hover{
+	background-color: rgb(90, 90, 90);
+}
+
+ul{
+	
+}

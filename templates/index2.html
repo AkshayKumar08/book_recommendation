@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Book Recommender</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
+
+	<script type="text/javascript" src="{{ url_for('static', filename='script/script.js') }}"></script>
+</head>
+<body>
+	<h1>Books recomender</h1>
+	<form action="/search" method="post" id='form'>
+		<label id="book-label" for="Book">Enter Book Name:</label> <br>
+		<input type="text" name="book" id="book-input" placeholder="Enter book name"><br>
+		<input type="submit" name="submit" class="btn" value="Recommend">
+	</form>
+</body>
+</html>

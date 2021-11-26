@@ -3,14 +3,23 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Error</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style2.css')}}">
+	<script defer type="text/javascript" src="{{ url_for('static', filename='script/script.js') }}"></script>
+	<title>{{msg}}</title>
 </head>
 <body>
-	<a href="/">Go Back</a>
-	{% if msg == Null or len(msg) == 0 %}
-		<h1>Unexpected Error Occured</h1>
-	{% else %}
-		<h1>{{msg}}</h1>
-	{% endif %}
+	<div class="container">
+		<div class="search-bar">
+			<h1 class="header">Books Recomender</h1>
+			<form onsubmit="return validate()" action="/search" method="post" id="form">
+				<label class="book-label" for="Book">Enter Book Name:</label>
+				<input type="text" name="book" id="keyword" placeholder="Enter Book Title...">
+				<input onclick="validate()" type="submit" name="submit" class="btn" value="Search">
+			</form>
+		</div>
+		<div>
+			<h1>{{msg}}</h1>
+		</div>
+	</div>
 </body>
 </html>

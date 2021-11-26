@@ -2,16 +2,18 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style2.css')}}">	
-	<title>Book</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style2.css')}}">
+	<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+	<script defer type="text/javascript" src="{{ url_for('static', filename='script/script.js') }}"></script>
+	<title>{{result['book_details'].title}}</title>
 </head>
 <body>
 	<div class="container">
 		<div class="search-bar">
 			<h1 class="header">Books Recomender</h1>
-			<form action="/search" method="post" id="book-form">
+			<form action="/search" method="post" id="form"  onsubmit="return validate()">
 				<label class="book-label" for="Book">Enter Book Name:</label>
-				<input type="text" name="book" placeholder="Enter Book Title...">
+				<input type="text" name="book" id='keyword' placeholder="Enter Book Title...">
 				<input type="submit" name="submit" class="btn" value="Search">
 			</form>
 		</div>
@@ -25,28 +27,33 @@
 				</tr>
 				<tr id="book-authors">
 					<td><b>Book Author:</b></td>
-					<td>{{result['book_details'].authors}}</dt>
+					<td>{{result['book_details'].authors}}</td>
 				</tr>
 
 				<tr id="book-average-rating">
 					<td><b>Book Average Rating:</b></td>
-					<td>{{result['book_details'].average_rating}}</dt>
+					<td>
+						<div class="stars-outer">
+							<div class="stars-inner"></div>
+						</div>
+						<span class="number-rating"></span>
+					</td>
 				</tr>
 				<tr id="book-language-code">
 					<td><b>Book language:</b></td>
-					<td>{{result['book_details'].language_code}}</dt>
+					<td>{{result['book_details'].language_code}}</td>
 				</tr>
 				<tr id="book-rating-count">
 					<td><b>Book Rating Count:</b></td>
-					<td>{{result['book_details'].rating_count}}</dt>
+					<td>{{result['book_details'].rating_count}}</td>
 				</tr>
 				<tr id="book-publisher">
 					<td><b>Book publisher:</b></td>
-					<td>{{result['book_details'].publisher}}</dt>
+					<td>{{result['book_details'].publisher}}</td>
 				</tr>
 				<tr id="book-publication-date">
 					<td><b>Book Publication Date:</b></td>
-					<td>{{result['book_details'].publication_date}}</dt>
+					<td>{{result['book_details'].publication_date}}</td>
 				</tr>
 
 			</table>
@@ -56,14 +63,26 @@
 			<h1>Book recommendations</h1>
 			<div class="main">
 				{% for item in result['recommendations'] %}
-					<div class="card">
-						<!-- <div class="card-title"> -->
-							<h4>{{item.title}}</h4>
-						<!-- </div> -->
+					<div class="card">	
+						<h4>{{item.title}}</h4>
 					</div>
 				{% endfor %}
 			</div>
 		</div>
 	</div>
+
+	<script type="text/javascript">
+		
+		document.addEventListener('DOMContentLoaded', getRatings);
+		function getRatings(){
+			const rating = {{result['book_details'].average_rating}};
+			const starPercentage = (rating / 5) * 100;
+			const starPercentageRounded = `${Math.round(starPercentage/10) * 10}%`;
+
+			document.querySelector('.stars-inner').style.width = starPercentageRounded;
+			document.querySelector('.number-rating').innerHTML = rating
+		}
+	</script>
+
 </body>
 </html>

@@ -8,8 +8,8 @@
 body {
     text-align: center;
     color: #fff;
-    background: rgb(20, 20, 20);
-    padding: 20px;
+    background-image: url('2.jpg');
+    background-attachment: fixed;    
 }
 
 .container{
@@ -72,24 +72,15 @@ input[type="submit"]{
 }
 
 .content {
-	/*display: grid;*/
-	/*grid-template-columns: repeat(12, 1fr);*/
-	/*grid-auto-rows: minmax(100px, auto);*/
 	max-width: 1080px;
 	margin: 0px;
-	background-color: rgb(50, 50, 50);
+	background-color: rgb(30, 30, 30);
 	padding: 25px;
 	border-radius: 20px;
 }
 
 #boo-detailsk{
 	width: 100%;
-}
-
-#book-img {
-	/*grid-column: 1 / 5;
-	grid-row: 1 / 4;
-	margin: auto auto;*/
 }
 
 #book-title{
@@ -102,6 +93,34 @@ input[type="submit"]{
 	grid-column: 1 / 13;
 }
 
+.stars-outer {
+  position: relative;
+  display: inline-block;
+}
+
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+}
+
+.stars-outer::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #ccc;
+}
+
+.stars-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #f8ce0b;
+}
+
 table{
 	text-align: left;
 }
@@ -110,35 +129,35 @@ td{
 	padding-right: 10px;
 }
 
+.recommendations{
+	margin: auto;
+	max-width: 1000px;
+}
+
 .main{
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
-	grid-auto-rows: minmax(100px, auto);
-	max-width: 1080px;
+	align-items: center;
+	max-width: 1000px;
 	margin: 0px;
-	background-color: rgb(50, 50, 50);
-	padding: 25px;
+	background-color: rgb(30, 30, 30);
+	padding: 15px;
 	border-radius: 15px;
 }
 
 .card{
 	display: grid;
+	max-width: 1000px;
+	align-items: center;
 	margin: 5px;
-	background-color: rgb(65, 65, 65);
 	border-radius: 35px;
+	text-align: left;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .card:hover{
-	background-color: rgb(70, 70, 70);
+	background-color: rgb(40, 40, 40);
 }
-/*
-.card-title {
-	background-color: rgb(75, 75, 75);
-	min-height: 50px;
-	color: rgb(0, 0, 0);
-	border-radius: 20px;
-}*/
-
 .search-bar .header{
 	color: rgb(125, 125, 125);
 }
@@ -152,7 +171,7 @@ td{
 }
 
 .search-bar .btn:hover{
-	background-color: rgb(90, 90, 90);
+	background-color: rgb(50, 50, 50);
 }
 
 ul{

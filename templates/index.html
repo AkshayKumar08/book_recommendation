@@ -3,18 +3,21 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Book Recommender</title>
-		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css')}}">
-		<!-- <link rel="stylesheet" type="text/css" href="C:\Users\akshay kumar\Documents\JNTU\sem 7\project\mini\code\book_rec\static\css\style.css"> -->
-
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style2.css')}}">
 		<script type="text/javascript" src="{{ url_for('static', filename='script/script.js') }}"></script>
+		<style type="text/css">
+			body{
+				background-image: url({{ url_for("static", filename="css/1.jpg") }});
+			}
+		</style>
 	</head>
 	<body>
 		<div class="container" id="index-page">
 			<h1 class="header">Books Recomender</h1>
-			<form action="/search" method="post" id="book-form">
+			<form action="/search" method="post" id="book-form" onsubmit="return validate()">
 				<label class="book-label" for="Book">Enter Book Name:</label>
-				<input type="text" name="book" placeholder="Enter Book Title...">
-				<input type="submit" name="submit" class="btn" value="Search">
+				<input type="text" name="book" id="keyword" placeholder="Enter Book Title..."/>
+				<input type="submit" name="submit" class="btn" value="Search"/>
 			</form>
 		</div>
 	</body>
